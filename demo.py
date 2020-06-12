@@ -48,6 +48,7 @@ def detect_cv2(cfgfile, weightfile, imgfile):
     for i in range(2):
         start = time.time()
         boxes = do_detect(m, sized, 0.5, num_classes, 0.4, use_cuda)
+        print(boxes)
         finish = time.time()
         if i == 1:
             print('%s: Predicted in %f seconds.' % (imgfile, (finish - start)))

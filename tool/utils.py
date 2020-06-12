@@ -167,9 +167,14 @@ def plot_boxes_cv2(img, boxes, savename=None, class_names=None, color=None):
             rgb = color
         else:
             rgb = (255, 0, 0)
+        for i in range(100):
+            print(i)
+            print(class_names[i])
         if len(box) >= 7 and class_names:
             cls_conf = box[5]
             cls_id = box[6]
+            print(cls_id)
+            print(class_names[cls_id])
             print('%s: %f' % (class_names[cls_id], cls_conf))
             classes = len(class_names)
             offset = cls_id * 123457 % classes
@@ -225,7 +230,6 @@ def post_processing(img, conf_thresh, n_classes, nms_thresh, output):
         bboxs_for_imgs = [
             boxes[0][index] + boxes[1][index] + boxes[2][index]
             for index in range(img.shape[0])]
-        # 分别对每一张图片的结果进行nms
         t3 = time.time()
         boxes = [nms(bboxs, nms_thresh) for bboxs in bboxs_for_imgs]
     else:

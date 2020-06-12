@@ -1,0 +1,1 @@
+python3 demo.py -cfgfile '/home/sharif/Documents/pytorch-YOLOv4/cfg/yolov4.cfg' -weightfile '/home/sharif/Documents/pytorch-YOLOv4/cfg/yolov4.weights' -imgfile '/home/sharif/Downloads/public_place.jpg' 
