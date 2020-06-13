@@ -1,4 +1,5 @@
 from PIL import Image
+import time
 import numpy as np
 import cv2
 from tool.utils import *
@@ -36,12 +37,15 @@ def detect(m, img):
         x1,y1 = box[0],box[1]
         x2,y2 = box[2],box[3]
         c = box[-1]
-        print(c)
+        #print(c)
     return boxes
 
 if __name__ == '__main__':
     m = load_model()
     img = Image.open(IMG_F)
     img = np.array(img)
-    for _ in range(1000):
+    for i in range(1000):
+        s = time.time()
         pred = detect(m, img)
+        e = time.time()
+        print(e-s)

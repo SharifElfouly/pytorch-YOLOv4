@@ -167,9 +167,9 @@ def plot_boxes_cv2(img, boxes, savename=None, class_names=None, color=None):
             rgb = color
         else:
             rgb = (255, 0, 0)
-        for i in range(100):
-            print(i)
-            print(class_names[i])
+#        for i in range(100):
+            #print(i)
+            #print(class_names[i])
         if len(box) >= 7 and class_names:
             cls_conf = box[5]
             cls_id = box[6]
